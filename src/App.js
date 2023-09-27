@@ -1,3 +1,4 @@
+/*
 import logo from './logo.svg';
 import { useState } from 'react';
 import './App.css';
@@ -49,7 +50,7 @@ function FoodRecipeContainer({recipes, filterText}){
 
 function SearchBar({
   filterText,
-  onFilterTextChange
+  onFilterTextChange // is the setFilterText
 }){
 
   return (
@@ -58,7 +59,7 @@ function SearchBar({
         type="text" 
         placeholder="Search..." 
         value={filterText}
-        onChange={(e) => onFilterTextChange(e.target.value)}/>
+        onChange={(e) => onFilterTextChange(e.target.value)}/>  
     </form>
   );
 }
@@ -127,3 +128,85 @@ function App() {
 }
 
 export default App;
+*/
+
+import {Routes, Route} from 'react-router-dom';
+import { useState } from 'react';
+import './App.css';
+//import Home from './pages/Home';
+import Recipe from './pages/Recipe';
+import FilterableFoodRecipeContainer from './pages/FilterableFoodRecipeContainer';
+
+
+const RECIPES = [
+  { category: "American", 
+    title: "Four Cheese Pizza", 
+    recipe: ["Dough", "Tomato Sauce", "Cheese"],
+    image: "https://picsum.photos/200" 
+  },
+  { category: "Japanese", 
+    title: "Pork Tonkatsu", 
+    recipe: ["Boneless Pork Chops", "Bead Crumbs", "Egg", "Corn Starch", "Oil"] ,
+    image: "https://picsum.photos/200"
+  },
+  { 
+    category: "Filipino", 
+    title: "Maruya", 
+    recipe: ["Kardaba", "Sugar","Oil"] ,
+    image: "https://picsum.photos/200"
+  },
+  { 
+    category: "Filipino", 
+    title: "Filipino Spaghetti", 
+    recipe: ["Pasta", "Sweet Tomato Sauce","Ground Pork", "Hot Dog"] ,
+    image: "https://picsum.photos/200"
+  },
+  { 
+    category: "Thailand", 
+    title: "Thai Omelette", 
+    recipe: ["Eggs", "FIsh Sauce","Oil"] ,
+    image: "https://picsum.photos/200"
+  },
+  { 
+    category: "Japanese", 
+    title: "Janapese Curry", 
+    recipe: ["Curry Mix", "Chicken","Vegetables"] ,
+    image: "https://picsum.photos/200"
+  },
+];
+
+function App() {
+  const [buttonText, setButtonText] = useState('');
+  
+  return (
+    <div className="App">
+      <Routes>
+        
+        <Route  path="/" 
+                element={
+                  <FilterableFoodRecipeContainer 
+                    recipes={RECIPES}
+                    buttonText={buttonText}
+                    onButtonTextClick={setButtonText}
+                  />
+                } 
+        />
+
+        <Route 
+                path="/about" 
+                element={
+                  <Recipe 
+                    recipes={RECIPES}
+                    buttonText={buttonText}
+                  />
+                } 
+        />  
+      </Routes>
+    </div>
+  );
+}
+
+export default App;
+
+
+
