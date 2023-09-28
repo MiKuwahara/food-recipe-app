@@ -38,10 +38,10 @@ function Recipe({recipes, buttonText}){
     */
     
     return(
-        <div>
-            <h1>{buttonText}: Recipe</h1>
+        <div className="recipe-area">
+            <h3>{buttonText}: Recipe</h3>
             <p>{ingredients}</p>
-            <button><Link to="/">Back to main</Link></button>
+            <Link to="/"><button>Home</button></Link>
         </div>
     );
 }

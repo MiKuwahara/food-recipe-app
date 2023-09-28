@@ -11,15 +11,17 @@ function Card({image, title, category, recipe, onButtonTextClick}){
     })
     return (
       <div className="card">
-        <img 
-        class="avatar"
-        src={image}
-        alt="Avatar" />
-        <h2>{title}</h2>
-        <p><span>Category:</span> {category}</p>
-        <p>Get Recipe
-            <Link to="/about"><button onClick={(e) => onButtonTextClick(e.currentTarget.textContent)}>{title}</button></Link>
-        </p>
+        <div className="card-image-area">
+          <img 
+          class="avatar"
+          src={image}
+          alt="Avatar" />
+        </div>
+        
+        <h3>{title}</h3>
+        <span>{category}</span>
+        <Link to="/about" className="card-link"><button onClick={(e) => onButtonTextClick(e.currentTarget.textContent)}>{title}</button></Link>
+       
       </div>
     );
   }
@@ -55,6 +57,7 @@ function SearchBar({
     return (
       <form>
         <input 
+          className="search-bar"
           type="text" 
           placeholder="Search..." 
           value={filterText}

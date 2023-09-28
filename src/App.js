@@ -135,6 +135,7 @@ import { useState } from 'react';
 import './App.css';
 //import Home from './pages/Home';
 import Recipe from './pages/Recipe';
+import Nav from './pages/Nav';
 import FilterableFoodRecipeContainer from './pages/FilterableFoodRecipeContainer';
 
 
@@ -180,6 +181,7 @@ function App() {
   
   return (
     <div className="App">
+      <Nav />
       <Routes>
         
         <Route  path="/" 
