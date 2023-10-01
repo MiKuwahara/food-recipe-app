@@ -18,6 +18,8 @@ function Recipe({recipes, buttonText}){
             <li>{item}</li>
         );
     });
+
+    const image = recipes[index].image;
     /*
     function getObject(object) {
         if(buttonText.toLowerCase() === object.title.toLowerCase()){
@@ -39,15 +41,25 @@ function Recipe({recipes, buttonText}){
     
     return(
         <div className="recipe-area">
-            <h3>{buttonText}: Recipe</h3>
-            <p>{ingredients}</p>
-            <Link to="/"><button>Home</button></Link>
+            <div className="recipe-image-area">
+                <img 
+                    className="recipe-image"
+                    src={image}
+                    alt="recipe image" 
+                />
+            </div>
+            <div className="recipe-detail-area">
+                <h3>- {buttonText} -</h3>
+                <h4>Ingredients</h4>
+                <p>{ingredients}</p>
+            </div>
         </div>
     );
 }
 
 export default Recipe;
-
+// 
+<Link to="/"><button>Home</button></Link>
 /*<h1>{buttonText}: Recipe</h1>
             <p>{ingredients}</p>
             <button><Link to="/">Back to main</Link></button> */
