@@ -59,7 +59,7 @@ function SearchBar({
         <input 
           className="search-bar"
           type="text" 
-          placeholder="Search..." 
+          placeholder="Search recipe..." 
           value={filterText}
           onChange={(e) => onFilterTextChange(e.target.value)}/>  
       </form>

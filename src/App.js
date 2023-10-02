@@ -142,12 +142,12 @@ import FilterableFoodRecipeContainer from './pages/FilterableFoodRecipeContainer
 const RECIPES = [
   { category: "American", 
     title: "Four Cheese Pizza", 
-    recipe: ["Dough", "Tomato Sauce", "Cheese"],
+    recipe: ["1 Pound Dough", "1 Cup Tomato Sauce", "2 Cups Cheese"],
     image: "https://picsum.photos/200" 
   },
   { category: "Japanese", 
     title: "Pork Tonkatsu", 
-    recipe: ["Boneless Pork Chops", "Bead Crumbs", "Egg", "Corn Starch", "Oil"] ,
+    recipe: ["6 Boneless Pork Chops", "2 Cups Bead Crumbs", "2 Egg", "1 Cup Corn Starch", "2 CUps Oil"] ,
     image: "https://picsum.photos/200"
   },
   { 
